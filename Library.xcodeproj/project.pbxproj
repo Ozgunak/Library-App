@@ -15,6 +15,7 @@
 		F0BAB1592BB36167007274A5 /* NewBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BAB1582BB36167007274A5 /* NewBookView.swift */; };
 		F0BAB15B2BB373C2007274A5 /* EditBookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BAB15A2BB373C2007274A5 /* EditBookView.swift */; };
 		F0BAB15D2BB37C6F007274A5 /* RatingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BAB15C2BB37C6F007274A5 /* RatingsView.swift */; };
+		F0BAB15F2BB4CC0D007274A5 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BAB15E2BB4CC0D007274A5 /* Preview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F0BAB1582BB36167007274A5 /* NewBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBookView.swift; sourceTree = "<group>"; };
 		F0BAB15A2BB373C2007274A5 /* EditBookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBookView.swift; sourceTree = "<group>"; };
 		F0BAB15C2BB37C6F007274A5 /* RatingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsView.swift; sourceTree = "<group>"; };
+		F0BAB15E2BB4CC0D007274A5 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				F0BAB1482BB35D1B007274A5 /* LibraryApp.swift */,
+				F0BAB15E2BB4CC0D007274A5 /* Preview.swift */,
 				F0BAB14A2BB35D1B007274A5 /* BookListView.swift */,
 				F0BAB1582BB36167007274A5 /* NewBookView.swift */,
 				F0BAB15A2BB373C2007274A5 /* EditBookView.swift */,
@@ -153,6 +156,7 @@
 				F0BAB15D2BB37C6F007274A5 /* RatingsView.swift in Sources */,
 				F0BAB15B2BB373C2007274A5 /* EditBookView.swift in Sources */,
 				F0BAB14B2BB35D1B007274A5 /* BookListView.swift in Sources */,
+				F0BAB15F2BB4CC0D007274A5 /* Preview.swift in Sources */,
 				F0BAB14D2BB35D1B007274A5 /* Book.swift in Sources */,
 				F0BAB1492BB35D1B007274A5 /* LibraryApp.swift in Sources */,
 			);
