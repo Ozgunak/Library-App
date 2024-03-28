@@ -8,47 +8,31 @@
 import SwiftUI
 import SwiftData
 
+enum SortOrder: String, Identifiable, CaseIterable {
+    case status, title, author
+    
+    var id: Self { self }
+    
+}
+
 struct BookListView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Book.title) private var books: [Book]
     @State private var isNewBookPresented: Bool = false
+    @State private var sortOrder = SortOrder.status
+    @State private var filterString: String = ""
 
     
     var body: some View {
         NavigationStack {
-            Group {
-                if books.isEmpty {
-                    ContentUnavailableView("Add a Book To Library", systemImage: "book.fill")
-                } else {
-                    List {
-                        ForEach(books) { book in
-                            NavigationLink {
-                                EditBookView(book: book)
-                            } label: {
-                                HStack(spacing: 10) {
-                                    book.icon
-                                    VStack(alignment: .leading) {
-                                        Text(book.title).font(.title2)
-                                        Text(book.author).foregroundStyle(.secondary)
-                                        if let rating = book.rating {
-                                            HStack {
-                                                ForEach(1..<rating, id: \.self) { _ in
-                                                    Image(systemName: "star.fill")
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                        .onDelete(perform: deleteItems)
-                    }
+            Picker("", selection: $sortOrder) {
+                ForEach(SortOrder.allCases) { order in
+                    Text("Sort by \(order.rawValue.capitalized)").tag(order)
                 }
+                
             }
+            .buttonStyle(.bordered)
+            BookList(sortOrder: sortOrder, filterString: filterString)
+                .searchable(text: $filterString, prompt: "Filter on title or author")
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
                 ToolbarItem {
                     Button {
                         isNewBookPresented.toggle()
@@ -64,14 +48,6 @@ struct BookListView: View {
                     .presentationDetents([.medium])
             }
             
-        }
-    }
-    
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(books[index])
-            }
         }
     }
 }
